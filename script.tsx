@@ -40,7 +40,7 @@ function App(): JSX.Element {
       </section>
 
       <footer>
-        <p>© {new Date().getFullYear()} Sidera Path — <a href="privacy.html">Privacy</a> • <a href="support.html">Support</a></p>
+        <p>© {new Date().getFullYear()} Sidera Path — <a href="/privacy.html">Privacy</a> • <a href="/support.html">Support</a></p>
       </footer>
     </div>
   )
