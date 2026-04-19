@@ -1,0 +1,16 @@
+{
+  "name": "sidera-landing",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "esbuild script.tsx --bundle --outfile=dist/script.js --minify --sourcemap --target=es2017 --loader:.png=file --loader:.svg=file --loader:.json=file",
+    "start": "node -e \"require('child_process').spawnSync(process.platform==='win32'? 'npx.cmd':'npx', ['serve','--listen','tcp://0.0.0.0:3000','--single','.'], {stdio:'inherit'})\" && exit 0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.18.0"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  }
+}

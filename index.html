@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID">
+  <meta property="og:title" content="Sidera Path">
+  <meta property="og:description" content="Daily insights, friends, and cosmic guidance — Sidera Path.">
+  <meta property="og:image" content="/assets/og-image.svg">
+  <meta property="og:url" content="https://the-kentpaul.github.io/StarPath/">
+  <title>Sidera Path — Find your way</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/images/favicon-circle.png" type="image/png">
+  <link rel="shortcut icon" href="assets/images/favicon-circle.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon-circle.png">
+  <meta name="theme-color" content="#000000">
+</head>
+<body>
+  <header class="cover-hero" role="banner">
+    <img src="assets/images/cover-art.png" alt="Cover art" class="cover-art">
+    <div class="hero-buttons" aria-label="Top actions">
+      <a href="#" class="hero-btn">Download iOS</a>
+      <a href="#" class="hero-btn">Download Android</a>
+      <a href="about.html" class="hero-btn">About Us</a>
+    </div>
+  </header>
+  <div class="container">
+    <section class="hero" aria-label="intro">
+      <div class="left">
+        <h1 class="title">Sidera Path</h1>
+        <p class="tag">Daily insights, friends, and cosmic guidance — Sidera Path.</p>
+      </div>
+    </section>
+  </div>
+  <div class="sign-strip" aria-label="Zodiac signs">
+    <div class="sign-track">
+      <div class="sign-card"><img src="assets/images/sign-art/aries.jpg" alt="Aries"></div>
+      <div class="sign-card"><img src="assets/images/sign-art/taurus.jpg" alt="Taurus"></div>
+      <div class="sign-card"><img src="assets/images/sign-art/gemini.jpg" alt="Gemini"></div>
+      <div class="sign-card"><img src="assets/images/sign-art/cancer.jpg" alt="Cancer"></div>
+      <div class="sign-card"><img src="assets/images/sign-art/leo.jpg" alt="Leo"></div>
+      <div class="sign-card"><img src="assets/images/sign-art/virgo.png" alt="Virgo"></div>
+      <div class="sign-card"><img src="assets/images/sign-art/libra.jpg" alt="Libra"></div>
+      <div class="sign-card"><img src="assets/images/sign-art/scorpio.jpg" alt="Scorpio"></div>
+      <div class="sign-card"><img src="assets/images/sign-art/sagittarius.jpg" alt="Sagittarius"></div>
+      <div class="sign-card"><img src="assets/images/sign-art/capricorn.jpg" alt="Capricorn"></div>
+      <div class="sign-card"><img src="assets/images/sign-art/aquarius.jpg" alt="Aquarius"></div>
+      <div class="sign-card"><img src="assets/images/sign-art/pisces.jpg" alt="Pisces"></div>
+    </div>
+  </div>
+  <footer class="landing-footer" role="contentinfo">
+    <div class="container">
+      <a href="privacy.html">Privacy</a> · <a href="support.html">Support</a>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var track = document.querySelector('.sign-track');
+      if (!track) return;
+
+      // Clone all original cards and create 3 sets: [clones][originals][clones]
+      var originals = Array.from(track.children);
+      var n = originals.length;
+      originals.forEach(function (c) { track.appendChild(c.cloneNode(true)); });
+      originals.slice().reverse().forEach(function (c) {
+        track.insertBefore(c.cloneNode(true), track.firstChild);
+      });
+
+      function setWidth() {
+        // width of one full set of cards
+        var card = track.children[n];
+        var style = window.getComputedStyle(track);
+        var gap = parseFloat(style.columnGap || style.gap) || 12;
+        return n * (card.offsetWidth + gap);
+      }
+
+      // Start scrolled to the middle (original) set
+      requestAnimationFrame(function () {
+        track.scrollLeft = setWidth();
+      });
+
+      track.addEventListener('scroll', function () {
+        var sw = setWidth();
+        if (track.scrollLeft < sw * 0.25) {
+          track.scrollLeft += sw;
+        } else if (track.scrollLeft > sw * 1.75) {
+          track.scrollLeft -= sw;
+        }
+      }, { passive: true });
+    })();
+  </script>
+</body>
+</html>
