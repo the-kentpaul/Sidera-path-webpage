@@ -19,8 +19,8 @@
   <header class="cover-hero" role="banner">
     <img src="assets/images/cover-art.png" alt="Cover art" class="cover-art">
     <div class="hero-buttons" aria-label="Top actions">
-      <a href="notify.html" class="hero-btn">Download iOS</a>
-      <a href="notify.html" class="hero-btn">Download Android</a>
+      <a href="#" class="hero-btn open-notify" data-platform="ios">Download iOS</a>
+      <a href="#" class="hero-btn open-notify" data-platform="android">Download Android</a>
       <a href="about.html" class="hero-btn">About Us</a>
     </div>
   </header>
@@ -28,7 +28,7 @@
     <section class="hero" aria-label="intro">
       <div class="left">
         <h1 class="title">Sidera Path</h1>
-        <p class="tag">Daily insights, friends, and cosmic guidance — Sidera Path.</p>
+        <p class="tag">Sidera Path is created to guide you in your daily life with gentle, actionable steps. Each day along with you reading we offer small suggestions and reflections that aligned with the rhythms of the sun, moon, and stars. Our goal is to help you grow, reflect, and make meaningful changes that improve your life over time.</p>
       </div>
     </section>
   </div>
@@ -47,6 +47,17 @@
       <div class="sign-card"><img src="assets/images/sign-art/capricorn.jpg" alt="Capricorn"></div>
       <div class="sign-card"><img src="assets/images/sign-art/aquarius.jpg" alt="Aquarius"></div>
       <div class="sign-card"><img src="assets/images/sign-art/pisces.jpg" alt="Pisces"></div>
+    </div>
+  </div>
+
+  <!-- Notify modal (hidden by default) -->
+  <div id="notify-modal" class="modal" aria-hidden="true">
+    <div class="modal-overlay" data-close></div>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="notify-title">
+      <button class="modal-close" aria-label="Close">×</button>
+      <div class="modal-body">
+        <iframe id="notify-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSfJEAh0iWU6sQ4xh1rHhZcvLuK8QAdFPGnTcc2fKLopttOrcA/viewform?embedded=true" width="100%" height="720" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
     </div>
   </div>
   <footer class="landing-footer" role="contentinfo">
@@ -88,6 +99,36 @@
           track.scrollLeft -= sw;
         }
       }, { passive: true });
+    })();
+    // Modal open/close logic for embedded Google Form
+    (function () {
+      var modal = document.getElementById('notify-modal');
+      if (!modal) return;
+      var overlay = modal.querySelector('.modal-overlay');
+      var closeBtn = modal.querySelector('.modal-close');
+      var openers = document.querySelectorAll('.open-notify');
+
+      function openModal() {
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      openers.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          openModal();
+        });
+      });
+
+      overlay.addEventListener('click', closeModal);
+      closeBtn.addEventListener('click', closeModal);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
     })();
   </script>
 </body>
