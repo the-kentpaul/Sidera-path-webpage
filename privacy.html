@@ -9,6 +9,29 @@
   <style>body{background:#fff;color:#111}</style>
 </head>
 <body>
+  <header class="site-header" role="banner">
+    <div class="left-group">
+      <a href="/" class="brand" aria-label="Sidera Path homepage">
+        <img src="assets/logo.png" alt="Sidera Path" class="logo">
+        <span class="brand-name">Sidera Path</span>
+      </a>
+    </div>
+    <div class="container">
+      <div class="actions">
+        <a href="/" class="nav-link hero-btn">Home</a>
+        <a href="#" class="get-notify hero-btn open-notify">Get notified</a>
+        <div class="hero-socials" aria-hidden="false">
+          <a href="https://instagram.com/siderapath" class="social-link" aria-label="Sidera Path on Instagram" target="_blank" rel="noopener noreferrer">
+            <img src="assets/socials-media-logos/Instagram_Glyph_Gradient.svg" alt="Instagram" class="social-icon">
+          </a>
+          <a href="https://www.tiktok.com/@siderapath" class="social-link" aria-label="Sidera Path on TikTok" target="_blank" rel="noopener noreferrer">
+            <img src="assets/socials-media-logos/TikTok_Icon_Black_Square.png" alt="TikTok" class="social-icon social-icon--tiktok">
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
   <div class="container">
     <h1>Privacy Policy</h1>
     <p><strong>Effective date:</strong> April 19, 2026</p>
@@ -20,7 +43,6 @@
       <li><strong>Account information.</strong> When you create an account, we may collect your email address, phone number, username, and authentication identifiers from Firebase Authentication or Google Sign-In.</li>
       <li><strong>Profile and birth details.</strong> We collect information you provide in your profile, such as your name, date of birth, birth time, birth city, and other astrology-related preferences.</li>
       <li><strong>Profile photos and media.</strong> If you choose to upload a profile picture, we access media you select from your device library and store the resulting image on our backend.</li>
-      <li><strong>Approximate location from IP/network data.</strong> Sidera Path may determine your approximate location using your IP address or network-based geolocation when the app opens. We do not request device GPS/location permissions for this purpose.</li>
       <li><strong>Notification data.</strong> If you enable notifications, we collect and store your push token and notification preference so we can deliver reminders and reading alerts.</li>
       <li><strong>Device and security data.</strong> We may collect device timezone, app version, platform details, and security-related identifiers needed for fraud prevention, App Check, authentication, and service reliability.</li>
       <li><strong>Support communications.</strong> If you contact support, we collect the information you include in your message.</li>
@@ -30,7 +52,6 @@
     <ul>
       <li>To create and manage your account.</li>
       <li>To generate astrology charts, readings, and personalized in-app experiences.</li>
-      <li>To provide approximate location context without requesting device location permissions.</li>
       <li>To store and display your profile photo when you choose to upload one.</li>
       <li>To send push notifications if you opt in.</li>
       <li>To secure the service, prevent abuse, troubleshoot issues, and maintain the app.</li>
@@ -41,20 +62,7 @@
       <li><strong>Photos / media library.</strong> We request media access only when you choose a profile picture.</li>
       <li><strong>Notifications.</strong> We request notification permission only if you enable notifications.</li>
       <li><strong>No camera or microphone access.</strong> Sidera Path does not require camera or microphone permissions for normal operation.</li>
-      <li><strong>No device GPS permission.</strong> Sidera Path does not request Android or iOS device location permissions for approximate location features.</li>
     </ul>
-
-    <h2>Third-Party Services</h2>
-    <p>We use third-party providers to operate the app. Depending on the feature you use, these providers may process relevant data on our behalf.</p>
-    <ul>
-      <li>Firebase Authentication, Firebase App Check, and related Google/Firebase services for sign-in, account security, and push delivery support.</li>
-      <li>Google Sign-In when you choose that authentication method.</li>
-      <li>IP geolocation providers to estimate approximate location from network/IP data.</li>
-      <li>Infrastructure and hosting providers used to operate our API, storage, and notifications.</li>
-      <li>Mailing list and newsletter providers (e.g., Mailchimp) if you subscribe to email updates; they will store subscriber email addresses and manage delivery/unsubscribe operations on our behalf.</li>
-    </ul>
-
-    <p><strong>Newsletter / Mailing List.</strong> If you choose to subscribe to our mailing list via the website, we use a third-party provider to manage subscriptions, send email, and provide unsubscribe and preference management. Subscriber emails are collected and stored by that provider (for example, Mailchimp). We do not publish or commit subscriber lists to this repository. By subscribing you consent to the provider's processing for delivery and list management; please review their privacy documentation for details.</p>
 
     <h2>Data Sharing</h2>
     <p>We do not sell your personal information. We share information only with service providers that help us run Sidera Path, when required by law, or when necessary to protect the rights, safety, and security of our users and services.</p>
@@ -78,7 +86,55 @@
 
     <h2>Contact</h2>
     <p>If you have questions about this Privacy Policy or our data practices, please visit our <a href="/support.html">Support</a> page.</p>
-    <p><a href="/">Back</a></p>
   </div>
+
+  <div id="notify-modal" class="modal" aria-hidden="true">
+    <div class="modal-overlay" data-close></div>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="notify-title">
+      <button class="modal-close" aria-label="Close">×</button>
+      <div class="modal-body">
+        <iframe id="notify-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSfJEAh0iWU6sQ4xh1rHhZcvLuK8QAdFPGnTcc2fKLopttOrcA/viewform?embedded=true" width="100%" height="720" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
+    </div>
+  </div>
+
+  <footer class="landing-footer" role="contentinfo">
+    <div class="container">
+      <a href="/privacy.html">Privacy</a> · <a href="/support.html">Support</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var modal = document.getElementById('notify-modal');
+      if (!modal) return;
+      var overlay = modal.querySelector('.modal-overlay');
+      var closeBtn = modal.querySelector('.modal-close');
+      var openers = document.querySelectorAll('.open-notify');
+
+      function openModal() {
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      openers.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          openModal();
+        });
+      });
+
+      overlay.addEventListener('click', closeModal);
+      closeBtn.addEventListener('click', closeModal);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    })();
+  </script>
 </body>
+</html>
 </html>

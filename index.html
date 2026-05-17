@@ -17,7 +17,10 @@
 </head>
 <body>
   <header class="cover-hero" role="banner">
-    <img src="assets/images/cover-art.png" alt="Cover art" class="cover-art">
+    <div class="progressive-image">
+      <img src="assets/images/cover-art-lqip.jpg" alt="Cover art placeholder" class="lqip cover-art" aria-hidden="true">
+      <img src="assets/images/cover-art.png" alt="Cover art" class="hires cover-art" loading="lazy" decoding="async">
+    </div>
     <div class="hero-buttons" aria-label="Top actions">
       <a href="#" class="hero-btn open-notify">Get notified</a>
       <div class="hero-socials" aria-hidden="false">
@@ -136,6 +139,15 @@
       overlay.addEventListener('click', closeModal);
       closeBtn.addEventListener('click', closeModal);
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    })();
+    // Progressive blur-up: swap in high-res when loaded
+    (function () {
+      var hires = document.querySelectorAll('.progressive-image .hires');
+      hires.forEach(function (img) {
+        function mark() { img.classList.add('loaded'); }
+        if (img.complete) return mark();
+        img.addEventListener('load', mark);
+      });
     })();
   </script>
 </body>

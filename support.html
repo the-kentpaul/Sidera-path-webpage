@@ -9,11 +9,80 @@
   <style>body{background:#fff;color:#111}</style>
 </head>
 <body>
+  <header class="site-header" role="banner">
+    <div class="left-group">
+      <a href="/" class="brand" aria-label="Sidera Path homepage">
+        <img src="assets/logo.png" alt="Sidera Path" class="logo">
+        <span class="brand-name">Sidera Path</span>
+      </a>
+    </div>
+    <div class="container">
+      <div class="actions">
+        <a href="/" class="nav-link hero-btn">Home</a>
+        <a href="#" class="get-notify hero-btn open-notify">Get notified</a>
+        <div class="hero-socials" aria-hidden="false">
+          <a href="https://instagram.com/siderapath" class="social-link" aria-label="Sidera Path on Instagram" target="_blank" rel="noopener noreferrer">
+            <img src="assets/socials-media-logos/Instagram_Glyph_Gradient.svg" alt="Instagram" class="social-icon">
+          </a>
+          <a href="https://www.tiktok.com/@siderapath" class="social-link" aria-label="Sidera Path on TikTok" target="_blank" rel="noopener noreferrer">
+            <img src="assets/socials-media-logos/TikTok_Icon_Black_Square.png" alt="TikTok" class="social-icon social-icon--tiktok">
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
   <div class="container">
     <h1>Support</h1>
-    <p>For support, please open a support request through the app.</p>
-    <p>Provide your device, app version, and a short description of the issue.</p>
-    <p><a href="/">Back</a></p>
+    <p>If you need help, please email <a href="mailto:support@siderapath.com">support@siderapath.com</a> with your device, app version, and a short description of the issue. We'll review your message and get back to you as soon as possible.</p>
   </div>
+
+  <div id="notify-modal" class="modal" aria-hidden="true">
+    <div class="modal-overlay" data-close></div>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="notify-title">
+      <button class="modal-close" aria-label="Close">×</button>
+      <div class="modal-body">
+        <iframe id="notify-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSfJEAh0iWU6sQ4xh1rHhZcvLuK8QAdFPGnTcc2fKLopttOrcA/viewform?embedded=true" width="100%" height="720" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
+    </div>
+  </div>
+
+  <footer class="landing-footer" role="contentinfo">
+    <div class="container">
+      <a href="/privacy.html">Privacy</a> · <a href="/support.html">Support</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var modal = document.getElementById('notify-modal');
+      if (!modal) return;
+      var overlay = modal.querySelector('.modal-overlay');
+      var closeBtn = modal.querySelector('.modal-close');
+      var openers = document.querySelectorAll('.open-notify');
+
+      function openModal() {
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      openers.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          openModal();
+        });
+      });
+
+      overlay.addEventListener('click', closeModal);
+      closeBtn.addEventListener('click', closeModal);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    })();
+  </script>
 </body>
 </html>

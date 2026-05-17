@@ -1,4 +1,4 @@
-:root{--accent:#6b46c1;--bg:#ffffff;--muted:#9ca3af}
+:root{--accent:#6b46c1;--bg:#ffffff;--muted:#9ca3af;--header-buttons-top:18px}
 *{box-sizing:border-box}
 body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:#ffffff;color:#0f1724;max-width:100vw;overflow-x:clip}
 .container{max-width:980px;margin:0 auto;padding:40px 40px 12px}
@@ -28,8 +28,15 @@ footer{margin-top:48px;color:var(--muted);font-size:13px}
 .cover-hero{width:100%;overflow:hidden;position:relative}
 .cover-art{display:block;width:100%;height:36vh;object-fit:cover;object-position:center}
 
+/* Progressive "blur-up" placeholder (LQIP) */
+.progressive-image{position:relative;overflow:hidden}
+.progressive-image img{display:block;width:100%;height:36vh;object-fit:cover;object-position:center;transition:opacity 700ms ease, filter 700ms ease, transform 700ms ease}
+.progressive-image .lqip{filter:blur(18px) scale(1.05)}
+.progressive-image .hires{position:absolute;inset:0;top:0;left:0;width:100%;height:100%;opacity:0}
+.progressive-image .hires.loaded{opacity:1}
+
 /* Top-right hero overlay buttons */
-.hero-buttons{position:absolute;top:14px;right:18px;display:flex;gap:16px;align-items:center;z-index:10}
+.hero-buttons{position:absolute;top:var(--header-buttons-top,14px);right:18px;display:flex;gap:16px;align-items:center;z-index:10}
 .hero-btn{color:#ffffff;text-decoration:none;background:rgba(0,0,0,0.32);padding:8px 12px;border-radius:999px;font-weight:600;font-size:14px;box-shadow:0 6px 16px rgba(2,6,23,0.24);transition:transform 120ms ease,background 120ms ease}
 .hero-btn:hover{transform:translateY(-2px);background:rgba(0,0,0,0.45)}
 
@@ -106,3 +113,35 @@ footer{margin-top:48px;color:var(--muted);font-size:13px}
 .modal-close{position:absolute;right:10px;top:8px;background:transparent;border:0;color:#111;font-size:26px;line-height:1;cursor:pointer;padding:6px}
 .modal-body{padding:0}
 .modal-body iframe{width:100%;height:70vh;border:0;display:block}
+
+/* Top black header to match main page */
+.site-header{background:#000;color:#fff;padding:26px 0;position:relative}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;padding-left:20px;padding-right:20px}
+.site-header .left-group{position:absolute;left:12px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;z-index:30}
+.site-header .brand img{width:56px;height:56px;max-height:56px;display:block}
+.site-header .brand .brand-name{font-weight:700;font-size:18px;color:#fff;line-height:1;margin-left:8px}
+.site-header .nav{display:flex;align-items:center;gap:14px}
+.site-header .nav a{color:#fff;text-decoration:none;font-weight:600}
+.site-header .actions .nav-link{color:#fff;text-decoration:none;font-weight:600;padding:8px 12px;border-radius:999px;font-size:14px;display:inline-flex;align-items:center;line-height:1;margin-left:2px}
+.site-header .actions .nav-link:hover{opacity:0.92}
+.site-header .actions{position:absolute;right:18px;top:var(--header-buttons-top,14px);display:flex;align-items:center;gap:6px;z-index:40}
+.site-header .actions .hero-socials{margin-left:10px}
+.site-header .actions .hero-btn{color:#ffffff;text-decoration:none;background:rgba(0,0,0,0.32);padding:8px 12px;border-radius:999px;font-weight:600;font-size:14px;box-shadow:0 6px 16px rgba(2,6,23,0.24);transition:transform 120ms ease,background 120ms ease}
+.site-header .actions .hero-btn:hover{transform:translateY(-2px);background:rgba(0,0,0,0.45)}
+.site-header .social-icon{width:28px;height:28px;display:block}
+.site-header .social-icon.social-icon--tiktok{width:39px;height:39px;display:block}
+
+@media (max-width:480px){
+  .site-header .actions{top:10px;left:50%;right:auto;transform:translateX(-50%);gap:12px;width:92%;max-width:720px;justify-content:center;flex-wrap:nowrap;padding:4px 6px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .site-header .actions .hero-socials{margin-left:0}
+  .site-header .actions .hero-btn{padding:7px 10px;font-size:13px;white-space:nowrap;flex:0 0 auto}
+  .site-header .social-icon{width:22px;height:22px}
+  .site-header .social-icon.social-icon--tiktok{width:29px;height:29px}
+}
+
+@media (max-width:720px){
+  .site-header .container{padding-left:96px}
+  .site-header .brand img{width:40px;height:40px;max-height:40px}
+  .site-header .brand .brand-name{font-size:16px}
+  .site-header .left-group{left:8px}
+}
