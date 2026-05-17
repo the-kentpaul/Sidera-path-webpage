@@ -1,12 +1,18 @@
 :root{--accent:#6b46c1;--bg:#ffffff;--muted:#9ca3af}
 *{box-sizing:border-box}
 body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:#ffffff;color:#0f1724;max-width:100vw;overflow-x:clip}
-.container{max-width:980px;margin:0 auto;padding:40px}
+.container{max-width:980px;margin:0 auto;padding:40px 40px 12px}
 .hero{display:flex;align-items:center;gap:36px}
 .hero .left{flex:1;min-width:0}
 .logo{width:72px;height:72px}
 .title{font-size:36px;margin:0 0 8px}
-.tag{color:var(--muted);margin:0 0 20px}
+.tag{color:var(--muted);margin:0 0 8px}
+
+/* Coming soon label under title */
+.coming-soon{color:var(--accent);font-weight:600;margin:6px 0 14px;font-size:14px}
+
+/* About page heading */
+.about-heading{color:var(--accent);font-weight:800;margin:8px 0 18px;font-size:22px}
 .badges{display:flex;gap:12px}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;background:rgba(0,0,0,0.06);color:#0f1724;text-decoration:none}
 .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:36px}
@@ -23,9 +29,20 @@ footer{margin-top:48px;color:var(--muted);font-size:13px}
 .cover-art{display:block;width:100%;height:36vh;object-fit:cover;object-position:center}
 
 /* Top-right hero overlay buttons */
-.hero-buttons{position:absolute;top:14px;right:18px;display:flex;gap:10px;align-items:center;z-index:10}
+.hero-buttons{position:absolute;top:14px;right:18px;display:flex;gap:16px;align-items:center;z-index:10}
 .hero-btn{color:#ffffff;text-decoration:none;background:rgba(0,0,0,0.32);padding:8px 12px;border-radius:999px;font-weight:600;font-size:14px;box-shadow:0 6px 16px rgba(2,6,23,0.24);transition:transform 120ms ease,background 120ms ease}
 .hero-btn:hover{transform:translateY(-2px);background:rgba(0,0,0,0.45)}
+
+/* Social icons adjacent to the notify button */
+.hero-socials{display:flex;gap:12px;align-items:center}
+.hero-socials .social-link + .social-link{margin-left:2px}
+.social-link{display:inline-flex;align-items:center;justify-content:center;border-radius:8px;text-decoration:none}
+.social-link .social-icon{width:28px;height:28px;display:block}
+.social-link .social-icon.social-icon--tiktok{width:39px;height:39px}
+@media (max-width:480px){
+  .social-link .social-icon{width:22px;height:22px}
+  .social-link .social-icon.social-icon--tiktok{width:29px;height:29px}
+}
 
 /* Desktop: ensure buttons stay top-right */
 @media (min-width:721px){
@@ -34,14 +51,14 @@ footer{margin-top:48px;color:var(--muted);font-size:13px}
 
 /* Mobile tweaks: center buttons, crop cover, and keep sign strip inside viewport */
 @media (max-width:720px){
-  .container{padding-left:20px;padding-right:20px;padding-top:24px;padding-bottom:24px}
+  .container{padding-left:20px;padding-right:20px;padding-top:24px;padding-bottom:12px}
   .hero{flex-direction:column;align-items:flex-start}
   .title{font-size:28px}
   .cover-art{height:26vh;object-position:50% 40%}
 }
 @media (max-width:480px){
   .cover-art{height:20vh;object-position:50% 35%}
-  .hero-buttons{top:10px;left:50%;right:auto;transform:translateX(-50%);gap:8px;width:92%;max-width:720px;justify-content:center;flex-wrap:nowrap;padding:4px 6px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .hero-buttons{top:10px;left:50%;right:auto;transform:translateX(-50%);gap:12px;width:92%;max-width:720px;justify-content:center;flex-wrap:nowrap;padding:4px 6px;overflow-x:auto;-webkit-overflow-scrolling:touch}
   .hero-btn{padding:7px 10px;font-size:13px;white-space:nowrap;flex:0 0 auto}
 }
 
@@ -50,7 +67,7 @@ footer{margin-top:48px;color:var(--muted);font-size:13px}
 .landing-footer a{color:var(--accent);text-decoration:none;padding:0 8px;font-weight:500}
 
 /* Horizontal sign-art strip — full viewport width, touch-scrollable */
-.sign-strip{width:100%;margin-top:18px;margin-bottom:8px}
+.sign-strip{width:100%;margin-top:0px;margin-bottom:8px}
 .sign-track{
   display:flex;
   gap:6px;
