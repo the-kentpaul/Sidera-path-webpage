@@ -7,7 +7,8 @@
     "start": "node -e \"require('child_process').spawnSync(process.platform==='win32'? 'npx.cmd':'npx', ['serve','--listen','tcp://0.0.0.0:3000','.'], {stdio:'inherit'})\" && exit 0"
   },
   "devDependencies": {
-    "esbuild": "^0.28.0"
+    "esbuild": "^0.28.0",
+    "jimp": "^0.16.1"
   },
   "dependencies": {
     "react": "18.2.0",
