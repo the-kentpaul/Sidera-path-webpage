@@ -7,7 +7,7 @@ Directory structure (created)
 ```plaintext
 /landing-page
 ├── index.html                  # Loads the built bundle (dist/script.js)
-├── privacy.html                # Privacy Policy (required by app stores)
+├── privacy/                    # Privacy Policy (required by app stores)
 ├── support/                    # Support page (required by Apple)
 ├── terms.html                  # Optional Terms of Service
 ├── style.css                   # Theme + layout styles (dark by default)
@@ -114,7 +114,7 @@ Files to replace before submission
 
 - `assets/screenshot-1.png`: placeholder — add real screenshots.
 - `assets/app-store.svg` and `assets/play-store.svg`: replace with official badges and links.
-- `privacy.html` and `support/`: update legal text and support email.
+- `privacy/` and `support/`: update legal text and support email.
 
 Git & CI
 
