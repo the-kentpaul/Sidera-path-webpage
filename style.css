@@ -120,6 +120,32 @@ footer{margin-top:48px;color:var(--muted);font-size:13px}
 .site-header .left-group{position:absolute;left:12px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;z-index:30}
 .site-header .brand img{width:56px;height:56px;max-height:56px;display:block}
 .site-header .brand .brand-name{font-weight:700;font-size:18px;color:#fff;line-height:1;margin-left:8px}
+.site-header .brand,
+.site-header .site-brand,
+.site-header .left-group {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:#fff;
+}
+.site-header .site-logo,
+.site-header .logo,
+.site-header .brand img {
+  width:56px;
+  height:56px;
+  max-height:56px;
+  display:block;
+}
+.site-header .site-title,
+.site-header .brand .brand-name {
+  font-weight:700;
+  font-size:18px;
+  color:#fff;
+  line-height:1;
+  margin-left:8px;
+  text-decoration:none;
+}
 .site-header .nav{display:flex;align-items:center;gap:14px}
 .site-header .nav a{color:#fff;text-decoration:none;font-weight:600}
 .site-header .actions .nav-link{color:#fff;text-decoration:none;font-weight:600;padding:8px 12px;border-radius:999px;font-size:14px;display:inline-flex;align-items:center;line-height:1;margin-left:2px}
