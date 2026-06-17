@@ -5,21 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID">
   <meta property="og:title" content="Sidera Path">
-  <meta property="og:description" content="Daily insights, friends, and cosmic guidance — Sidera Path.">
+  <meta property="og:description" content="Daily insights, friends, and cosmic guidance from Sidera Path.">
   <meta property="og:image" content="/assets/og-image.svg">
   <meta property="og:url" content="https://the-kentpaul.github.io/StarPath/">
-  <title>Sidera Path — Find your way</title>
+  <title>Sidera Path: Find your way</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
   <link rel="icon" href="assets/images/favicon-circle.png" type="image/png">
   <link rel="shortcut icon" href="assets/images/favicon-circle.png">
   <link rel="apple-touch-icon" href="assets/images/favicon-circle.png">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#06060a">
 </head>
-<body>
+<body class="home">
   <header class="cover-hero" role="banner">
-    <div class="progressive-image">
-      <img src="assets/images/cover-art-lqip.jpg" alt="Cover art placeholder" class="lqip cover-art" aria-hidden="true">
-      <img src="assets/images/cover-art.png" alt="Cover art" class="hires cover-art" loading="lazy" decoding="async">
+    <div class="progressive-image hero-bg" aria-hidden="true">
+      <img src="assets/images/cover-art-lqip.jpg" alt="" class="lqip cover-art">
+      <img src="assets/images/cover-art.png" alt="" class="hires cover-art" decoding="async">
     </div>
     <div class="hero-buttons" aria-label="Top actions">
       <a href="#" class="hero-btn open-notify">Get notified</a>
@@ -32,19 +33,151 @@
         </a>
       </div>
     </div>
-  </header>
-  <div class="container">
-    <section class="hero" aria-label="intro">
-      <div class="left">
+    <div class="hero-inner">
+      <div class="hero-copy">
         <h1 class="title">Sidera Path</h1>
         <p class="coming-soon">Coming Soon on iOS and Android</p>
-        <p class="tag">Sometimes astrology is used to scare or pressure people into choices; Sidera Path is different. We offer supportive, non-judgmental guidance rather than fear. Sidera Path is created to guide you in your daily life with gentle, actionable steps. Each day, as you read, we offer small suggestions and reflections aligned with the rhythms of the sun, moon, and stars. Our goal is to help you grow, reflect, and make meaningful changes that improve your life over time.</p>
+        <p class="hero-headline">Welcome to a gentler way to look at the stars.</p>
       </div>
+      <div class="hero-phone">
+        <div class="phone-frame">
+          <img src="assets/images/app-screens/home.png" alt="Sidera Path home screen showing your Sun, Moon and Rising signs with the weekly reading" loading="eager" decoding="async">
+        </div>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">⌄</div>
+  </header>
+
+  <div class="container">
+    <section class="welcome glass reveal" aria-label="What Sidera Path is about">
+      <h2>Supportive guidance, not fear</h2>
+      <p>Sidera Path is built around supportive, non-judgmental guidance instead of fear or rigid predictions. Instead of telling you what will happen or dictating your future, we translate the daily rhythms of the sun, moon, and stars into small, realistic actions you can actually use to improve your everyday routine. It's an interactive space designed to help you grow, reflect, and make meaningful life changes, entirely at your own pace.</p>
+      <p class="tag">Sometimes astrology is used to scare or pressure people into choices; Sidera Path is different. We offer supportive, non-judgmental guidance rather than fear. Sidera Path is created to guide you in your daily life with gentle, actionable steps. Each day, as you read, we offer small suggestions and reflections aligned with the rhythms of the sun, moon, and stars. Our goal is to help you grow, reflect, and make meaningful changes that improve your life over time.</p>
     </section>
   </div>
-  
+
+  <!-- ===================== Feature sections ===================== -->
+
+  <section class="feature reveal" aria-labelledby="f-steps">
+    <div class="feature-head">
+      <span class="section-eyebrow">What you can do</span>
+      <h2 id="f-steps">Take Small Daily Steps</h2>
+      <p>Every day brings a fresh cosmic perspective, but never a vague horoscope. Sidera Path breaks each day's insight into quiet reflections and small, doable actions: mindful micro-habits to help you check in, clear your head, and stay grounded.</p>
+    </div>
+    <div class="feature-stage">
+      <article class="note note--tl glass">
+        <h4><span class="dot gold"></span>Cosmic, not cryptic</h4>
+        <p>Your weekly reading, translated from real sun, moon &amp; planet movements.</p>
+      </article>
+      <div class="phone-frame">
+        <img src="assets/images/app-screens/readings.png" alt="Sidera Path readings screen turning a weekly reading into small, tagged actions" loading="lazy">
+      </div>
+      <article class="note note--tr glass">
+        <h4><span class="dot purple"></span>Tiny, doable steps</h4>
+        <p>Each suggestion is a 15 to 30 minute micro-habit, tagged by life area.</p>
+      </article>
+      <article class="note note--br glass">
+        <h4><span class="dot green"></span>Add what fits</h4>
+        <p>Tap to add a step to your day. No pressure, no streaks to lose.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Story interlude: What is Sidera? -->
+  <section class="story reveal" aria-labelledby="s-sidera">
+    <article class="story-card glass">
+      <span class="section-eyebrow">The name</span>
+      <h2 id="s-sidera">What is Sidera?</h2>
+      <p>The name "Sidera" comes from Latin (the plural of "sidus") and means the stars or the heavens. It is a quiet, ancient word that points to the same night sky people across cultures have long looked to for both practical guidance and for moments of reflection.</p>
+      <p>For thousands of years sailors and travelers read the sky to find their way. Polaris provided a steady north, the Moon's phases marked the passing of time, and the visible motions of planets and constellations helped communities plan journeys and seasons. Those careful observations also grew into astrological traditions, simple ways of noticing repeating celestial rhythms and the echoes they seemed to have in everyday life.</p>
+      <p>Sidera Path honors that history without making grand promises. We translate observable astronomical rhythms into gentle, practical prompts and compassionate reflections to help you notice patterns, build small habits, and take steady, human-sized steps forward.</p>
+    </article>
+  </section>
+
+  <section class="feature reveal" aria-labelledby="f-constellation">
+    <div class="feature-head">
+      <span class="section-eyebrow">Track your growth</span>
+      <h2 id="f-constellation">Build Your Personalized Constellation</h2>
+      <p>Logging progress shouldn't feel like a sterile spreadsheet. You have three starmaps: your Sun, Moon, and Rising. Every completed step traces another line across the sky, and completing your maps earns stardust you can spend to unlock new themes.</p>
+    </div>
+    <div class="pathway-trio">
+      <figure class="pathway-step reveal">
+        <div class="phone-frame">
+          <img src="assets/images/app-screens/sun-pathway.png" alt="Sun starmap just begun, with a single star lit" loading="lazy">
+        </div>
+        <figcaption class="glass">
+          <span class="step-badge">Sun</span>
+          <h4>Your first spark</h4>
+          <p>Your Sun map reflects your core self and resets once a year, on your birthday. Each map begins as a single lit star.</p>
+        </figcaption>
+      </figure>
+      <figure class="pathway-step reveal">
+        <div class="phone-frame">
+          <img src="assets/images/app-screens/moon-pathway.png" alt="Moon starmap in progress, with stars connecting into a partial constellation" loading="lazy">
+        </div>
+        <figcaption class="glass">
+          <span class="step-badge">Moon</span>
+          <h4>Lines take shape</h4>
+          <p>Your Moon map is your emotional world and resets with every new moon. Keep going and each step connects the next star.</p>
+        </figcaption>
+      </figure>
+      <figure class="pathway-step reveal">
+        <div class="phone-frame">
+          <img src="assets/images/app-screens/rising-pathway.png" alt="Rising starmap complete, with the full constellation traced in gold" loading="lazy">
+        </div>
+        <figcaption class="glass">
+          <span class="step-badge">Rising</span>
+          <h4>Journey complete</h4>
+          <p>Your Rising map is how you meet the world and resets every day. Finish every step to reveal the full constellation.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Story interlude: Why Path? -->
+  <section class="story reveal" aria-labelledby="s-path">
+    <article class="story-card glass">
+      <span class="section-eyebrow">Why Path?</span>
+      <h2 id="s-path">Small steps, real change</h2>
+      <p>A stronger sense of meaning in life raises positive emotion, reduces exercise procrastination, and strengthens self-regulation, making small, repeatable actions far more likely to stick (Miao et al., 2025). When an action feels connected to why we care, it becomes easier to begin and to keep going.</p>
+      <p>The microsteps approach champions actions that are “too small to fail”: very low-friction, highly repeatable steps paired with brief celebrations (Thrive / Stanford Medicine). Those tiny wins build momentum without demanding large acts of will.</p>
+      <p>Anchoring tiny, repeatable actions in personally meaningful terms and pairing each completion with a quick positive cue leverages both effects: meaning increases the emotional fuel for follow-through, while microsteps remove friction. Together they lower procrastination and make steady, sustainable change far more likely.</p>
+    </article>
+  </section>
+
+  <section class="feature reveal" aria-labelledby="f-circle">
+    <div class="feature-head">
+      <span class="section-eyebrow">Stay connected</span>
+      <h2 id="f-circle">Connect with Your Inner Circle</h2>
+      <p>Self-reflection doesn't mean journeying completely alone. Bring your favourite people along in a quiet, private space: add close friends, share your daily readings, and leave supportive reactions. No algorithms, no public vanity metrics, no pressure.</p>
+    </div>
+    <div class="feature-stage">
+      <article class="note note--tl glass">
+        <h4><span class="dot purple"></span>A small, private circle</h4>
+        <p>Add close friends and gently follow each other's progress.</p>
+      </article>
+      <div class="phone-frame">
+        <img src="assets/images/app-screens/friends.png" alt="Sidera Path friends feed with supportive emoji reactions" loading="lazy">
+      </div>
+      <article class="note note--br glass">
+        <h4><span class="dot green"></span>Encourage, don't compete</h4>
+        <p>Leave a heart or a 🎉 on the wins that actually matter.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="closer reveal" aria-labelledby="f-companion">
+    <article class="closer-card glass">
+      <span class="section-eyebrow">Every single day</span>
+      <h2 id="f-companion">Your Daily Companion</h2>
+      <p>No anxiety, no info-overload, and zero judgment. Sidera Path is simply a calm daily companion, helping you build better habits, understand your energy, and enjoy your journey under the stars.</p>
+      <a href="#" class="cta-btn open-notify">Get notified at launch</a>
+    </article>
+  </section>
+
+  <!-- ===================== Zodiac sign-art strip ===================== -->
   <div class="sign-strip" aria-label="Zodiac signs">
-      <div class="sign-track">
+    <div class="sign-track">
       <div class="sign-card"><img src="assets/images/sign-art/optimized/aries.jpg" alt="Aries" loading="lazy"></div>
       <div class="sign-card"><img src="assets/images/sign-art/optimized/taurus.jpg" alt="Taurus" loading="lazy"></div>
       <div class="sign-card"><img src="assets/images/sign-art/optimized/gemini.jpg" alt="Gemini" loading="lazy"></div>
@@ -60,26 +193,6 @@
     </div>
   </div>
 
-  <div class="container more-info" aria-label="About Sidera Path">
-    <section class="info-grid" aria-label="What is Sidera and Why Path">
-      <article class="info">
-        <h2>What is Sidera?</h2>
-        <p>The name "Sidera" comes from Latin (the plural of "sidus") and means the stars or the heavens. It is a quiet, ancient word that points to the same night sky people across cultures have long looked to for both practical guidance and for moments of reflection.</p>
-        <p>For thousands of years sailors and travelers read the sky to find their way. Polaris provided a steady north, the Moon's phases marked the passing of time, and the visible motions of planets and constellations helped communities plan journeys and seasons. Those careful observations also grew into astrological traditions, simple ways of noticing repeating celestial rhythms and the echoes they seemed to have in everyday life.</p>
-        <p>Sidera Path honors that history without making grand promises. We translate observable astronomical rhythms into gentle, practical prompts and compassionate reflections to help you notice patterns, build small habits, and take steady, human-sized steps forward.</p>
-      </article>
-      <article class="info">
-        <h2>Why Path?</h2>
-        <p>A stronger sense of meaning in life raises positive emotion, reduces exercise procrastination, and strengthens self-regulation, making small, repeatable actions far more likely to stick (Miao et al., 2025). When an action feels connected to why we care, it becomes easier to begin and to keep going.</p>
-
-        <p>The microsteps approach champions actions that are “too small to fail”: very low-friction, highly repeatable steps paired with brief celebrations (Thrive / Stanford Medicine). Those tiny wins build momentum without demanding large acts of will.</p>
-
-        <p>Anchoring tiny, repeatable actions in personally meaningful terms and pairing each completion with a quick positive cue leverages both effects: meaning increases the emotional fuel for follow-through, while microsteps remove friction. Together they lower procrastination and make steady, sustainable change far more likely.</p>
-      </article>
-    </section>
-    
-  </div>
-
   <!-- Notify modal (hidden by default) -->
   <div id="notify-modal" class="modal" aria-hidden="true">
     <div class="modal-overlay" data-close></div>
@@ -90,17 +203,19 @@
       </div>
     </div>
   </div>
+
   <footer class="landing-footer" role="contentinfo">
     <div class="container">
-      <a href="/privacy/">Privacy</a> · <a href="/support/">Support</a>
+      <a href="/privacy/">Privacy</a> · <a href="/support/">Support</a> · <a href="/terms/">Terms</a>
     </div>
   </footer>
+
   <script>
+    // Infinite, centered zodiac sign-art strip
     (function () {
       var track = document.querySelector('.sign-track');
       if (!track) return;
 
-      // Clone all original cards and create 3 sets: [clones][originals][clones]
       var originals = Array.from(track.children);
       var n = originals.length;
       originals.forEach(function (c) { track.appendChild(c.cloneNode(true)); });
@@ -109,14 +224,12 @@
       });
 
       function setWidth() {
-        // width of one full set of cards
         var card = track.children[n];
         var style = window.getComputedStyle(track);
         var gap = parseFloat(style.columnGap || style.gap) || 12;
         return n * (card.offsetWidth + gap);
       }
 
-      // Start scrolled to the middle (original) set
       requestAnimationFrame(function () {
         track.scrollLeft = setWidth();
       });
@@ -130,6 +243,7 @@
         }
       }, { passive: true });
     })();
+
     // Modal open/close logic for embedded Google Form
     (function () {
       var modal = document.getElementById('notify-modal');
@@ -160,6 +274,7 @@
       closeBtn.addEventListener('click', closeModal);
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
     })();
+
     // Progressive blur-up: swap in high-res when loaded
     (function () {
       var hires = document.querySelectorAll('.progressive-image .hires');
@@ -168,6 +283,22 @@
         if (img.complete) return mark();
         img.addEventListener('load', mark);
       });
+    })();
+
+    // Scroll-reveal for sections (respects reduced-motion)
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var items = document.querySelectorAll('.reveal');
+      if (reduce || !('IntersectionObserver' in window)) {
+        items.forEach(function (el) { el.classList.add('in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      items.forEach(function (el) { io.observe(el); });
     })();
   </script>
 </body>
